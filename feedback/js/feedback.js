@@ -57,7 +57,7 @@ $(document).ready(function() {
                     var form = $(this).closest('form'), name = form.attr('name');
                     //console.log(form);
                     if(isset(conf[name]) && isset(conf[name].cfg.antispamjs)) {
-                      $(form).prepend('<input type="text" name="'+ conf[name].cfg.antispamjs +'" value="tesby" style="display:none;">');
+                        $(form).prepend('<input type="text" name="'+ conf[name].cfg.antispamjs +'" value="tesby" style="display:none;">');
                     }
                 });
             }

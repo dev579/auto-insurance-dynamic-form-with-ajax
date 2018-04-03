@@ -173,13 +173,15 @@
 
 
 
-                <p style="margin: 30px 0 30px;" class="add-driver"> <a style="color: #963;" href="#"> <i class="fa fa-plus-circle"></i> Добавить застрахованного </a> </p>
-                <p style="margin: 30px 0 30px;" class="remove-driver"> <a style="color: #963;" href="#"> <i class="fa fa-minus-circle"></i> Удалить застрахованного </a> </p>
+                <p style="margin: 30px 0 30px;" class="add-driver"> <a data-bind="add" style="color: #963;" href="#"> <i class="fa fa-plus-circle"></i> Добавить застрахованного </a> </p>
+                <p style="margin: 30px 0 30px;" class="remove-driver"> <a data-bind="remove" style="color: #963;" href="#"> <i class="fa fa-minus-circle"></i> Удалить застрахованного </a> </p>
 
                 <label class="checkbox" style="margin-top: 15px;">
                     <input type="checkbox" value="yes" name="checkbox"> согласен на обработку персональных данных
                 </label>
 
+
+                <input type="hidden" name="driver_counter" value="1" style="/* display:none; */">
 
              
                 <input class="feedback btn btn-block btn-large btn-success" style="/* margin-top: 30px; */ margin: 40px auto 0; max-width: 250px;" name="send" type="button" value="Рассчитать !">
