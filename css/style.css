@@ -1,0 +1,203 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+
+
+
+
+
+.input-append, .input-prepend {
+	display: block;
+}
+
+.btn-attention {
+    color: #333;
+    background-color: #fff;
+    border-color: #e6be8a;
+    box-shadow: 0 1px 0 0 #e6be8a;
+}
+
+.btn-attention:hover {
+    box-shadow: 0 3px 0 0 #e6be8a;
+}
+
+
+
+
+
+#prolongate_btn {
+	margin-bottom: 30px;
+	max-width: 280px;
+}
+
+#prolongate_btn:hover, #prolongate_btn:focus, #prolongate_btn :active,{
+	background-color: transparent;
+
+}
+
+
+#prolongate_btn .text-uppercase {
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+
+
+
+
+.col-2.inline {
+    margin-right: 3%;
+    width: 48%;
+    display: inline-block;
+    /*background-color: lightgray;*/
+    /*background-color: #e8e8e8;*/
+}
+
+
+
+.col-2.inline > div {
+    padding-right: 12px;
+}
+
+
+.driver_wrap_inner .col1 {
+    width: 357px;
+}
+
+
+
+
+
+.driver_wrap_inner .col2 {
+    width: 170px;
+}
+
+
+
+
+input.col-1.fixed {
+    /*width: 487px;*/
+    width: 617px;
+}
+
+.col-2.inline input {
+    /*width: 227px;*/
+    width: 292px;
+	/*width: auto !important;*/
+}
+
+
+.driver_wrap_outer {
+    /*margin-top: 30px;*/
+    margin: 30px 0 25px;
+    /*padding: 17px;*/
+    padding: 40px;
+    border: 1px solid #d6d6d6;
+    border-radius: 7px;
+}
+
+.driver_wrap_inner {
+	margin-top: 17px;
+	padding-top: 15px;
+    border-top: 1px solid orange;
+}
+
+.driver_wrap_outer label.checkbox {
+    margin-top: 20px;
+}
+
+.driver_wrap_outer col-2.inline col1 {
+    width: 350px;
+}
+
+.driver_wrap_outer col-2.inline col2 {
+    width: 170px;
+}
+
+
+
+
+
+
+
+.col-2.inline input {
+    /*width: 208px;*/
+    /*width: 275px;*/
+    width: 100%;
+}
+
+
+
+
+.fa-plus-circle:before {
+    content: "\f055";
+}
+
+:after, :before {
+    box-sizing: border-box;
+}
+
+
+form#kasko_insurance input {
+    padding: 7px 5px;
+}
+
+
+
+
+
+
+
+
+.step-open .step-id {
+    background: #333;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+.step-id {
+    text-align: center;
+    text-align-last: center;
+    width: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    position: absolute;
+    /*left: -2.618rem;*/
+    left: -0.918rem;
+    margin-left: -.5px;
+    background: #ccc;
+    border-radius: 2rem;
+
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 600;
+    
+}
+
+
+
+
+#kasko-f-w .well {
+    border: unset;
+}
+
+#kasko-f-w legend {
+    border-bottom: unset;
+}
+
+#kasko-f-w .step-heading legend {
+    font-size: 26px;
+    line-height: 30px;
+}
+
+
+
+
+
+
+
+
+
