@@ -64,6 +64,16 @@ $form['form-1'] = array(
 		'usepresuf' => false
 	)
 );
+
+
+
+
+
+
+
+
+
+
 $form['form-2'] = array(
 	'fields' => array(
 		'name' => array(
@@ -140,10 +150,38 @@ $form['form-2'] = array(
 		'usepresuf' => false
 	)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 $form['form-3'] = array(
 	'fields' => array(
-		'name' => array(
-			'title' => 'Имя',
+		'region' => array(
+			'title' => 'Регион проживания страхователя',
 			'validate' => array(
 				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
 				'minlength' => '3',
@@ -155,39 +193,62 @@ $form['form-3'] = array(
 				'maxlength' => 'Максимальная длинна поля [ %1$s ] превышает допустимую - %2$s',
 			)
 		),
-		'tell' => array(
-			'title' => 'Телефон',
+
+
+
+		'vehicle_name' => array(
+			'title' => 'Марка и модель автомобиля',
 			'validate' => array(
-				'preg' => "/^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$/",
-				'minlength' => '5',
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Максимальная длинна поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+
+
+
+		'vehicle_year' => array(
+			'title' => 'Год выпуска',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
 			),
 			'messages' => array(
 				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
 				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-		'e-mail' => array(
-			'title' => 'E-mail',
+
+
+
+
+
+		'vehicle_mileage' => array(
+			'title' => 'Пробег',
 			'validate' => array(
-				'preg' => '%@%is',
-				'minlength' => '5',
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
 			),
 			'messages' => array(
 				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
 				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-		'text' => array(
-			'title' => 'Сообщение',
-			'validate' => array(
-				'minlength' => '1',
-			),
-			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо заполнить',
-			)
-		),
-		'checkbox' => array(
-			'title' => 'Checkbox',
+
+
+
+		'checkbox_car_is_paid_a_loan' => array(
+			'title' => 'За автомобиль выплачивается кредит',
 			'validate' => array(
 				'minlength' => '1',
 			),
@@ -195,22 +256,139 @@ $form['form-3'] = array(
 				'minlength' => '[ %1$s ] необходимо установить',
 			)
 		),
-		'radio' => array(
-			'title' => 'Radio',
+
+
+
+
+		'checkbox_unlimited_number_of_drivers' => array(
+			'title' => 'Неограниченное кол-во водителей',
 			'validate' => array(
 				'minlength' => '1',
 			),
 			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо выбрать',
+				'minlength' => '[ %1$s ] необходимо установить',
 			)
 		),
-		'select' => array(
-			'title' => 'Select',
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		'bio_driver_1' => array(
+			'title' => 'Фамилия / Имя / Отчество (Водитель 1)',
 			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Максимальная длинна поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+
+
+
+		'date_of_birth_driver_1' => array(
+			'title' => 'Дата рождения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+
+
+
+
+		'driver_license_driver_1' => array(
+			'title' => 'номер Водительского удостоверения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+
+
+
+		'driving_experience_driver_1' => array(
+			'title' => 'Дата начала стажа 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+
+
+
+		'processing_of_personal_data' => array(
+			'title' => 'согласен на обработку персональных данных',
+			'validate' => array(
+//				'preg' => "/^[yes]$/",
 				'minlength' => '1',
 			),
 			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо выбрать',
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+		'driver_counter' => array(
+			'title' => 'Количество водителей',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[1-4]$/",	// original string
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длинна поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
 	),
@@ -240,6 +418,20 @@ $form['form-3'] = array(
 		'usepresuf' => false
 	)
 );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
