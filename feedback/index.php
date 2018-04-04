@@ -375,11 +375,12 @@ $form['form-2'] = array(
 		'geoip' => true,
 		'referer' => true,
 		'type' => 'html',
-		'tpl' => true,
+		// 'tpl' => true,
+		'tpl' => false,
 		'antispam' => 'email77',
 		'antispamjs' => 'address77',
 //		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
-		'okay' => 'Message sent successfully - OK',
+		'okay' => 'Спасибо, Ваше сообщение успешно отправлено. <br />Менеджер свяжется с Вами в ближайшее время.',
 //		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
         'err' => 'Message was not sent - ERROR',
 		'spam' => 'Cпам робот',
@@ -391,7 +392,7 @@ $form['form-2'] = array(
 
 
 
-
+// end of form #2
 
 
 
@@ -634,13 +635,9 @@ $form['form-3'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-
-
-
-
-
-
 	),
+
+
 	'cfg' => array(
 		'charset' => 'utf-8',
 		'subject' => 'Тема письма',
@@ -759,7 +756,7 @@ if(isset($form[$act])) {
 
                if(empty($getdata[$name]['value'])) {
                      unset($getdata[$name]);
-                  }
+               }
 
 
       } //foreach end
@@ -838,13 +835,15 @@ if(isset($form[$act])) {
      }
       // или отдаем голый текст
         if(mb_strlen(trim($sb['body'])) < 10) {
-          if(isset($form['cfg']['title']))
-              $sb['body'] .= $form['cfg']['title']."\r\n\r\n";
-          foreach($getdata as $name => $data) {
-              $sb['body'] .= $data['title'].": ".$data['value']."\r\n";
-          }
-          if($form['cfg']['referer'])
-              $sb['body'] .= "\r\n\r\n\r\n\r\n".$ref;
+	          if(isset($form['cfg']['title']))
+	              $sb['body'] .= $form['cfg']['title']."\r\n\r\n";
+
+	          foreach($getdata as $name => $data) {
+	              $sb['body'] .= $data['title'].": ".$data['value']."<br />\r\n";
+	          }
+
+	          if($form['cfg']['referer'])
+	              $sb['body'] .= "\r\n\r\n\r\n\r\n".$ref;
       }
       // если есть что добавить
        if(isset($form['cfg']['adds']) &&
