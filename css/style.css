@@ -201,3 +201,39 @@ form#kasko_insurance input {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/*  start: temporary section */
+
+div.jGrowl div.jGrowl-notification div.jGrowl-header {
+    display: none;
+}
+
+div.jGrowl div.jGrowl-notification, div.jGrowl div.jGrowl-closer {
+    /*background-color: #000;*/
+    background-color: orange;
+    color: #252525;
+}
+
+div.jGrowl div.infos {
+    /*background-color: #1a1a1a;*/
+    /*color: #eeeeee;*/
+    background-color: green;
+    font-weight: 600;
+}
+
+/*  end: temporary section */
+
+
+
+
+
+

@@ -94,11 +94,11 @@ function feedback(vars) {
              if(/textbox/i.test(cfg.notify)) {
                     if(isset(answer.errors)) {
                         $.each(answer.errors, function(k,val) {
-                            $.jGrowl(val, {theme: 'error', header: 'Ошибка!', life: 3000 });
+                            $.jGrowl(val, {theme: 'error', header: 'Ошибка!', life: 3000000 });
                         });
                     } if(isset(answer.infos)) {
                         $.each(answer.infos, function(k,val) {
-                            $.jGrowl(val, {theme: 'infos', header: 'Внимание!', life: 3000 });
+                            $.jGrowl(val, {theme: 'infos', header: 'Внимание!', life: 3000000 });
                         });
                     }
 
