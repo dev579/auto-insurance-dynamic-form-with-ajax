@@ -11,129 +11,16 @@ $host = $_SERVER['HTTP_HOST'];
 $ref = $_SERVER['HTTP_REFERER'];
 
 
+
+
+
+
+
+
+
+
 $form['form-1'] = array(
 	'fields' => array(
-		'name' => array(
-			'title' => 'Имя',
-			'validate' => array(
-				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
-				'minlength' => '3',
-				'maxlength' => '35',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
-			)
-		),
-		'tell' => array(
-			'title' => 'Телефон',
-			'validate' => array(
-				'preg' => "/^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$/",
-				'minlength' => '5',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-	),
-	'cfg' => array(
-		'charset' => 'utf-8',
-		'subject' => 'Тема письма',
-		'title' => 'Заголовок в теле письма',
-		'ajax' => true,
-		'validate' => true,
-		'from_email' => 'noreply@email.com',
-		'from_name' => 'noreply',
-//		'to_email' => 'noreply1@email.com, noreply2@email.com', // string by default
-		'to_email' => 'olegd6@mail.ru, pak975@mail.ru',
-		'to_name' => 'noreply1, noreply2',
-		'geoip' => true,
-		'referer' => true,
-		'type' => 'html',
-		'tpl' => true,
-		'antispam' => 'email77',
-		'antispamjs' => 'address77',
-//		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
-		'okay' => 'Message sent successfully - OK',
-//		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
-        'err' => 'Message was not sent - ERROR',
-		'spam' => 'Cпам робот',
-		'notify' => 'color-modal-textbox',
-		'usepresuf' => false
-	)
-);
-
-
-
-
-
-
-
-
-
-
-$form['form-2'] = array(
-	'fields' => array(
-
-
-
-
-
-		// 'name' => array(
-		// 	'title' => 'Имя',
-		// 	'validate' => array(
-		// 		'preg' => '%[A-Z-a-zА-Яа-я\s]%',
-		// 		'minlength' => '3',
-		// 		'maxlength' => '35',
-		// 	),
-		// 	'messages' => array(
-		// 		'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-		// 		'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-		// 		'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
-		// 	)
-		// ),
-		// 'tell' => array(
-		// 	'title' => 'Телефон',
-		// 	'validate' => array(
-		// 		'preg' => "/^((8|\+)[\- ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{5,10}$/",
-		// 		'minlength' => '5',
-		// 	),
-		// 	'messages' => array(
-		// 		'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-		// 		'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-		// 	)
-		// ),
-		// 'e-mail' => array(
-		// 	'title' => 'E-mail',
-		// 	'validate' => array(
-		// 		'preg' => '%@%is',
-		// 		'minlength' => '5',
-		// 	),
-		// 	'messages' => array(
-		// 		'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-		// 		'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-		// 	)
-		// ),
-		// 'text' => array(
-		// 	'title' => 'Сообщение',
-		// ),
-		// 'checkbox' => array(
-		// 	'title' => 'Checkbox',
-		// 	'validate' => array(
-		// 		'minlength' => '1',
-		// 	),
-		// 	'messages' => array(
-		// 		'minlength' => '[ %1$s ] необходимо установить',
-		// 	)
-		// ),
-
-
-
-
-
-
 
 
 		'region' => array(
@@ -230,18 +117,6 @@ $form['form-2'] = array(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 		'bio_driver_1' => array(
 			'title' => 'Фамилия / Имя / Отчество (Водитель 1)',
 			'validate' => array(
@@ -278,10 +153,6 @@ $form['form-2'] = array(
 
 
 
-
-
-
-
 		'driver_license_driver_1' => array(
 			'title' => 'номер Водительского удостоверения 1-го водителя',
 			'validate' => array(
@@ -298,10 +169,6 @@ $form['form-2'] = array(
 
 
 
-
-
-
-
 		'driving_experience_driver_1' => array(
 			'title' => 'Дата начала стажа 1-го водителя',
 			'validate' => array(
@@ -314,10 +181,6 @@ $form['form-2'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-
-
-
-
 
 
 
@@ -347,14 +210,6 @@ $form['form-2'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-
-
-
-
-
-
-
-
 
 
 
@@ -392,7 +247,7 @@ $form['form-2'] = array(
 
 
 
-// end of form #2
+// end of form #1
 
 
 
@@ -404,266 +259,6 @@ $form['form-2'] = array(
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-$form['form-3'] = array(
-	'fields' => array(
-
-
-
-
-
-
-		'region' => array(
-			'title' => 'Регион проживания страхователя',
-			'validate' => array(
-				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
-				'minlength' => '3',
-				'maxlength' => '35',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
-			)
-		),
-
-
-
-		'vehicle_name' => array(
-			'title' => 'Марка и модель автомобиля',
-			'validate' => array(
-				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
-				'minlength' => '3',
-				'maxlength' => '35',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
-			)
-		),
-
-
-
-
-
-
-		'vehicle_year' => array(
-			'title' => 'Год выпуска',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'minlength' => '4',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-
-
-
-
-
-		'vehicle_mileage' => array(
-			'title' => 'Пробег',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'minlength' => '4',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-
-
-
-		'checkbox_car_is_paid_a_loan' => array(
-			'title' => 'За автомобиль выплачивается кредит',
-			'validate' => array(
-				'minlength' => '1',
-			),
-			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо установить',
-			)
-		),
-
-
-
-
-		'checkbox_unlimited_number_of_drivers' => array(
-			'title' => 'Неограниченное кол-во водителей',
-			'validate' => array(
-				'minlength' => '0',
-			),
-			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо установить',
-			)
-		),
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-		'bio_driver_1' => array(
-			'title' => 'Фамилия / Имя / Отчество (Водитель 1)',
-			'validate' => array(
-				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
-				'minlength' => '3',
-				'maxlength' => '35',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
-			)
-		),
-
-
-
-
-
-
-		'date_of_birth_driver_1' => array(
-			'title' => 'Дата рождения 1-го водителя',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'minlength' => '4',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-
-
-
-
-
-
-
-
-
-		'driver_license_driver_1' => array(
-			'title' => 'номер Водительского удостоверения 1-го водителя',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^[A-Z0-9]{4,10}$/",
-				'minlength' => '4',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-
-
-
-
-
-
-
-
-		'driving_experience_driver_1' => array(
-			'title' => 'Дата начала стажа 1-го водителя',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'minlength' => '4',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-
-
-
-
-
-
-
-
-		'checkbox_processing_of_personal_data' => array(
-			'title' => 'согласен на обработку персональных данных',
-			'validate' => array(
-//				'preg' => "/^[yes]$/",
-				'minlength' => '1',
-			),
-			'messages' => array(
-				'minlength' => '[ %1$s ] необходимо установить',
-			)
-		),
-
-
-
-		'driver_counter' => array(
-			'title' => 'Количество водителей',
-			'validate' => array(
-//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
-				'preg' => "/^[1-4]$/",	// original string
-				'minlength' => '1',
-			),
-			'messages' => array(
-				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
-				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
-			)
-		),
-	),
-
-
-	'cfg' => array(
-		'charset' => 'utf-8',
-		'subject' => 'Тема письма',
-		'title' => 'Заголовок в теле письма',
-		'ajax' => true,
-		'validate' => true,
-		'from_email' => 'noreply@email.com',
-		'from_name' => 'noreply',
-//		'to_email' => 'noreply1@email.com, noreply2@email.com', //string by default
-        'to_email' => 'olegd6@mail.ru, pak975@mail.ru',
-		'to_name' => 'noreply1, noreply2',
-		'geoip' => true,
-		'referer' => true,
-		'type' => 'plain',
-		'tpl' => false,
-		'antispam' => 'email77',
-		'antispamjs' => 'address77',
-//		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
-		'okay' => 'Message sent successfully - OK',
-//		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
-        'err' => 'Message was not sent - ERROR',
-		'spam' => 'Cпам робот',
-		'notify' => 'color-modal',
-		'usepresuf' => false
-	)
-);
 
 
 
