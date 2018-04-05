@@ -48,6 +48,9 @@ console.log (new_form_name);
 
 							$(this).attr('name', new_input_name);
 
+//console.log ( $(this).val() );
+							$(this).val('');
+
 					});
 				}	//  end condition:  if (driver_number <= 3) 
 

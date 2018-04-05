@@ -55,9 +55,6 @@ $form['form-1'] = array(
 
 
 
-
-
-
 		'vehicle_year' => array(
 			'title' => 'Год выпуска',
 			'validate' => array(
@@ -70,8 +67,6 @@ $form['form-1'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-
-
 
 
 
@@ -102,7 +97,6 @@ $form['form-1'] = array(
 
 
 
-
 		'checkbox_unlimited_number_of_drivers' => array(
 			'title' => 'Неограниченное кол-во водителей',
 			'validate' => array(
@@ -116,6 +110,7 @@ $form['form-1'] = array(
 
 
 
+// start: additional section #1 of form # 1
 
 		'bio_driver_1' => array(
 			'title' => 'Фамилия / Имя / Отчество (Водитель 1)',
@@ -133,9 +128,6 @@ $form['form-1'] = array(
 
 
 
-
-
-
 		'date_of_birth_driver_1' => array(
 			'title' => 'Дата рождения 1-го водителя',
 			'validate' => array(
@@ -148,8 +140,6 @@ $form['form-1'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
-
-
 
 
 
@@ -181,6 +171,9 @@ $form['form-1'] = array(
 				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
 			)
 		),
+
+
+// end: additional section #1 of form # 1
 
 
 
@@ -248,6 +241,1423 @@ $form['form-1'] = array(
 
 
 // end of form #1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$form['form-2'] = array(
+	'fields' => array(
+
+
+		'region' => array(
+			'title' => 'Регион проживания страхователя',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Максимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_name' => array(
+			'title' => 'Марка и модель автомобиля',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_year' => array(
+			'title' => 'Год выпуска',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'vehicle_mileage' => array(
+			'title' => 'Пробег',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'checkbox_car_is_paid_a_loan' => array(
+			'title' => 'За автомобиль выплачивается кредит',
+			'validate' => array(
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+		'checkbox_unlimited_number_of_drivers' => array(
+			'title' => 'Неограниченное кол-во водителей',
+			'validate' => array(
+				'minlength' => '0',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #1 of form # 2
+
+		'bio_driver_1' => array(
+			'title' => '<br />Фамилия / Имя / Отчество (Водитель #1)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_1' => array(
+			'title' => 'Дата рождения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_1' => array(
+			'title' => 'номер Водительского удостоверения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_1' => array(
+			'title' => 'Дата начала стажа 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// start: additional section #1 of form # 2		
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #2 of form # 2
+
+
+		'bio_driver_2' => array(
+			'title' => '<br /><br />Фамилия / Имя / Отчество (Водитель #2)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_2' => array(
+			'title' => 'Дата рождения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_2' => array(
+			'title' => 'номер Водительского удостоверения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_2' => array(
+			'title' => 'Дата начала стажа 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+// end: additional section #2 of form # 2
+
+
+
+
+
+
+		'checkbox_processing_of_personal_data' => array(
+			'title' => 'согласен на обработку персональных данных',
+			'validate' => array(
+//				'preg' => "/^[yes]$/",
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+		'driver_counter' => array(
+			'title' => '<br />Общее количество водителей',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[1-4]$/",	// original string
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+	),
+	'cfg' => array(
+		'charset' => 'utf-8',
+		'subject' => 'Тема письма',
+		'title' => 'Заголовок в теле письма',
+		'ajax' => true,
+		'validate' => true,
+		'from_email' => 'noreply@email.com',
+		'from_name' => 'noreply',
+//		'to_email' => 'noreply1@email.com, noreply2@email.com', //string by default
+        'to_email' => 'olegd6@mail.ru, pak975@mail.ru',
+		'to_name' => 'noreply1, noreply2',
+		'geoip' => true,
+		'referer' => true,
+		'type' => 'html',
+		// 'tpl' => true,
+		'tpl' => false,
+		'antispam' => 'email77',
+		'antispamjs' => 'address77',
+//		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
+		'okay' => 'Спасибо, Ваше сообщение успешно отправлено. <br />Менеджер свяжется с Вами в ближайшее время.',
+//		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
+        'err' => 'Message was not sent - ERROR',
+		'spam' => 'Cпам робот',
+		'notify' => 'color-modal-textbox',
+		'usepresuf' => false
+	)
+);
+
+
+
+
+// end of form #2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$form['form-3'] = array(
+	'fields' => array(
+
+
+		'region' => array(
+			'title' => 'Регион проживания страхователя',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Максимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_name' => array(
+			'title' => 'Марка и модель автомобиля',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_year' => array(
+			'title' => 'Год выпуска',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'vehicle_mileage' => array(
+			'title' => 'Пробег',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'checkbox_car_is_paid_a_loan' => array(
+			'title' => 'За автомобиль выплачивается кредит',
+			'validate' => array(
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+		'checkbox_unlimited_number_of_drivers' => array(
+			'title' => 'Неограниченное кол-во водителей',
+			'validate' => array(
+				'minlength' => '0',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #1 of form # 3
+
+		'bio_driver_1' => array(
+			'title' => '<br />Фамилия / Имя / Отчество (Водитель #1)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_1' => array(
+			'title' => 'Дата рождения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_1' => array(
+			'title' => 'номер Водительского удостоверения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_1' => array(
+			'title' => 'Дата начала стажа 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// start: additional section #1 of form # 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #2 of form # 3
+
+
+		'bio_driver_2' => array(
+			'title' => '<br /><br />Фамилия / Имя / Отчество (Водитель #2)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_2' => array(
+			'title' => 'Дата рождения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_2' => array(
+			'title' => 'номер Водительского удостоверения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_2' => array(
+			'title' => 'Дата начала стажа 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+// start: additional section #2 of form # 3
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #3 of form # 3
+
+
+		'bio_driver_3' => array(
+			'title' => '<br /><br />Фамилия / Имя / Отчество (Водитель #3)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_3' => array(
+			'title' => 'Дата рождения 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_3' => array(
+			'title' => 'номер Водительского удостоверения 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_3' => array(
+			'title' => 'Дата начала стажа 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// start: additional section #3 of form # 3
+
+
+
+
+
+
+
+
+		'checkbox_processing_of_personal_data' => array(
+			'title' => 'согласен на обработку персональных данных',
+			'validate' => array(
+//				'preg' => "/^[yes]$/",
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+		'driver_counter' => array(
+			'title' => '<br /><br />Общее количество водителей',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[1-4]$/",	// original string
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+	),
+	'cfg' => array(
+		'charset' => 'utf-8',
+		'subject' => 'Тема письма',
+		'title' => 'Заголовок в теле письма',
+		'ajax' => true,
+		'validate' => true,
+		'from_email' => 'noreply@email.com',
+		'from_name' => 'noreply',
+//		'to_email' => 'noreply1@email.com, noreply2@email.com', //string by default
+        'to_email' => 'olegd6@mail.ru, pak975@mail.ru',
+		'to_name' => 'noreply1, noreply2',
+		'geoip' => true,
+		'referer' => true,
+		'type' => 'html',
+		// 'tpl' => true,
+		'tpl' => false,
+		'antispam' => 'email77',
+		'antispamjs' => 'address77',
+//		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
+		'okay' => 'Спасибо, Ваше сообщение успешно отправлено. <br />Менеджер свяжется с Вами в ближайшее время.',
+//		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
+        'err' => 'Message was not sent - ERROR',
+		'spam' => 'Cпам робот',
+		'notify' => 'color-modal-textbox',
+		'usepresuf' => false
+	)
+);
+
+
+
+
+// end of form # 3
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+$form['form-4'] = array(
+	'fields' => array(
+
+
+		'region' => array(
+			'title' => 'Регион проживания страхователя',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Максимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_name' => array(
+			'title' => 'Марка и модель автомобиля',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'vehicle_year' => array(
+			'title' => 'Год выпуска',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'vehicle_mileage' => array(
+			'title' => 'Пробег',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'checkbox_car_is_paid_a_loan' => array(
+			'title' => 'За автомобиль выплачивается кредит',
+			'validate' => array(
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+		'checkbox_unlimited_number_of_drivers' => array(
+			'title' => 'Неограниченное кол-во водителей',
+			'validate' => array(
+				'minlength' => '0',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #1 of form # 4		
+
+		'bio_driver_1' => array(
+			'title' => 'Фамилия / Имя / Отчество (Водитель #1)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_1' => array(
+			'title' => 'Дата рождения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_1' => array(
+			'title' => 'номер Водительского удостоверения 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_1' => array(
+			'title' => 'Дата начала стажа 1-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// end: additional section #1 of form # 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #2 of form # 4
+
+
+		'bio_driver_2' => array(
+			'title' => '<br />Фамилия / Имя / Отчество (Водитель #2)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_2' => array(
+			'title' => 'Дата рождения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_2' => array(
+			'title' => 'номер Водительского удостоверения 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_2' => array(
+			'title' => 'Дата начала стажа 2-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+// end: additional section #2 of form # 4
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #3 of form # 4
+
+
+		'bio_driver_3' => array(
+			'title' => '<br />Фамилия / Имя / Отчество (Водитель #3)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_3' => array(
+			'title' => 'Дата рождения 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_3' => array(
+			'title' => 'номер Водительского удостоверения 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_3' => array(
+			'title' => 'Дата начала стажа 3-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// end: additional section #3 of form # 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// start: additional section #4 of form # 4
+
+
+		'bio_driver_4' => array(
+			'title' => '<br />Фамилия / Имя / Отчество (Водитель #4)',
+			'validate' => array(
+				'preg' => '%[A-Z-a-zА-Яа-я\s]%',
+				'minlength' => '3',
+				'maxlength' => '35',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+				'maxlength' => 'Минимальная длина поля [ %1$s ] превышает допустимую - %2$s',
+			)
+		),
+
+
+
+		'date_of_birth_driver_4' => array(
+			'title' => 'Дата рождения 4-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+		'driver_license_driver_4' => array(
+			'title' => 'номер Водительского удостоверения 4-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[A-Z0-9]{4,10}$/",
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+		'driving_experience_driver_4' => array(
+			'title' => 'Дата начала стажа 4-го водителя',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'minlength' => '4',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+// end: additional section # 4
+
+
+
+
+		'checkbox_processing_of_personal_data' => array(
+			'title' => '<br />согласен на обработку персональных данных',
+			'validate' => array(
+//				'preg' => "/^[yes]$/",
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'minlength' => '[ %1$s ] необходимо установить',
+			)
+		),
+
+
+
+
+		'driver_counter' => array(
+			'title' => 'Общее количество водителей',
+			'validate' => array(
+//				'preg' => "/^((8|\+)[\-  ]?)?(\(?\d{3}\)?[\- ]?)?[\d\- ]{4,5}$/",	// original string
+				'preg' => "/^[1-4]$/",	// original string
+				'minlength' => '1',
+			),
+			'messages' => array(
+				'preg' => 'Поле [ %1$s ] возможно содержит ошибку',
+				'minlength' => 'Минимальная длина поля [ %1$s ] меньше допустимой - %2$s',
+			)
+		),
+
+
+
+
+
+	),
+	'cfg' => array(
+		'charset' => 'utf-8',
+		'subject' => 'Тема письма',
+		'title' => 'Заголовок в теле письма',
+		'ajax' => true,
+		'validate' => true,
+		'from_email' => 'noreply@email.com',
+		'from_name' => 'noreply',
+//		'to_email' => 'noreply1@email.com, noreply2@email.com', //string by default
+        'to_email' => 'olegd6@mail.ru, pak975@mail.ru',
+		'to_name' => 'noreply1, noreply2',
+		'geoip' => true,
+		'referer' => true,
+		'type' => 'html',
+		// 'tpl' => true,
+		'tpl' => false,
+		'antispam' => 'email77',
+		'antispamjs' => 'address77',
+//		'okay' => 'Сообщение отправлено - OK',      //RU-language //string by default
+		'okay' => 'Спасибо, Ваше сообщение успешно отправлено. <br />Менеджер свяжется с Вами в ближайшее время.',
+//		'err' => 'Сообщение отправлено - ERROR',      //RU-language //string by default
+        'err' => 'Message was not sent - ERROR',
+		'spam' => 'Cпам робот',
+		'notify' => 'color-modal-textbox',
+		'usepresuf' => false
+	)
+);
+
+
+
+
+// start: additional section #4 of form # 4
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

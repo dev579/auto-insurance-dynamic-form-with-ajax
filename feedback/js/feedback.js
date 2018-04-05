@@ -16,6 +16,8 @@ function inArray(needle, haystack) {
     }
     return false;
 }
+
+
 window.isset = function (v) {
     if (typeof(v) == 'object' && v == 'undefined') {
         return false;
@@ -30,6 +32,7 @@ window.isset = function (v) {
     }
     return true;
 }
+
 
 function myconf() {
     var cf = $.Deferred();
@@ -50,19 +53,54 @@ var mcf = myconf();
 mcf.done(function(conf) {
 
 $(document).ready(function() {
-(function() {
-           var fb = $('.feedback');
-           if(fb.length > 0) {
-                fb.each(function(){
-                    var form = $(this).closest('form'), name = form.attr('name');
-                    //console.log(form);
-                    if(isset(conf[name]) && isset(conf[name].cfg.antispamjs)) {
-                        $(form).prepend('<input type="text" name="'+ conf[name].cfg.antispamjs +'" value="tesby" style="display:none;">');
-                    }
-                });
-            }
-  })();
+
+      (function() {
+                 var fb = $('.feedback');
+                 if(fb.length > 0) {
+                      fb.each(function(){
+                          var form = $(this).closest('form'), name = form.attr('name');
+                          //console.log(form);
+                          if(isset(conf[name]) && isset(conf[name].cfg.antispamjs)) {
+                              $(form).prepend('<input type="text" name="'+ conf[name].cfg.antispamjs +'" value="tesby" style="display:none;">');
+                          }
+                      });
+                  }
+        })();
+
+
 });
+
+
+
+// $(document).on("click",  function() {
+
+jQuery(document).on('click', '.add-driver a', function(e){
+
+      mcf = myconf();
+
+        (function() {
+                   var fb = $('.feedback');
+                   if(fb.length > 0) {
+                        fb.each(function(){
+                            var form = $(this).closest('form'), name = form.attr('name');
+                            //console.log(form);
+                            if(isset(conf[name]) && isset(conf[name].cfg.antispamjs)) {
+                                $(form).prepend('<input type="text" name="'+ conf[name].cfg.antispamjs +'" value="tesby" style="display:none;">');
+                            }
+                        });
+                    }
+          })();
+
+
+});
+
+
+
+
+
+
+
+
 
 
 /**
@@ -169,6 +207,10 @@ function feedback(vars) {
 
 $(document).on('click', '.feedback', function(){
    var form = $(this).closest('form'), name = form.attr('name'), obj = {};
+
+console.log (name);
+
+
        obj.form = form;
        obj.act = name;
        obj.data = $(form).serialize();
